@@ -5,18 +5,12 @@ import os
 import sys
 from datetime import datetime
 
-vk_token = 'vk1.a.T4vPwN_msEuSxrOaKFgLrfwIu9M_WvlzdIB7KjT4yK4ehBNZOPV-7B464NfhYNRTDTZZmLB51QLxEtHxYYVHpYFzs9W4AyESfVF084TG6PA6jCUv5dvlYRIHnO5lRTUibw-UJZI9PsgqfZEDcQhoN4V1Kgvck1vP7lPqAoSKUxk_a-occROEF4eojtUhVQ-b'
-vk_id = '133303792'
-# # ya_token = 'AQAAAAAmU_IHAADLW_rot6wev0a-tLU34Tb9uP4'
-
 
 class VK:
     def __init__(self, count=5):
         self.params = {
-            # 'owner_id': input("Введите ID пользователя ВК: "),
-            # 'access_token': input("Введите токен пользователя ВК: "),
-            'owner_id': vk_id,
-            'access_token': vk_token,
+            'owner_id': input("Введите ID пользователя ВК: "),
+            'access_token': input("Введите токен пользователя ВК: "),
             'album_id': 'profile',
             'v': '5.131',
             'extended': '1',
@@ -61,10 +55,8 @@ class VK:
 
 class YaDisk:
     def __init__(self):
-        # self.ya_token = input("Введите токен пользователя Яндекс.Диск: ")
-        # self.dir_title = input("Введите название создаваемой на Яндекс.Диск папки: ")
-        self.ya_token = 'AQAAAAAmU_IHAADLW_rot6wev0a-tLU34Tb9uP4'
-        self.dir_title = 'VK photos'
+        self.ya_token = input("Введите токен пользователя Яндекс.Диск: ")
+        self.dir_title = input("Введите название создаваемой на Яндекс.Диск папки: ")
         self.headers = {
             'Content-Type': 'application/json',
             'Authorization': 'OAuth {}'.format(self.ya_token)
