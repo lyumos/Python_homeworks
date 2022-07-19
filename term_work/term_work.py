@@ -34,7 +34,8 @@ class VK:
                 if likes_count_ext not in photo_dict.values():
                     photo_info_dict["file_name"] = likes_count_ext
                 else:
-                    date = str(datetime.fromtimestamp(photos_info_list[photos_info_list.index(photo_info)]['date']).strftime('%d-%m-%Y_%H-%M'))
+                    date = str(datetime.fromtimestamp(photos_info_list[photos_info_list.index(photo_info)]['date']).
+                               strftime('%d-%m-%Y_%H-%M'))
                     photo_info_dict["file_name"] = likes_count + "_" + date + '.jpg'
                     break
             else:
@@ -96,10 +97,11 @@ class YaDisk:
                 new_dir_title = input('Другое название папки: ')
                 self.dir_title = new_dir_title
                 new_params = {
-                'path': new_dir_title,
-                'overwrite': 'true'
-            }
-                response = requests.put('https://cloud-api.yandex.net/v1/disk/resources', headers=headers, params=new_params)
+                    'path': new_dir_title,
+                    'overwrite': 'true'
+                }
+                response = requests.put('https://cloud-api.yandex.net/v1/disk/resources', headers=headers,
+                                        params=new_params)
             else:
                 print(f'Указанная папка успешно создана!\r')
                 if isinstance(user, VK):
